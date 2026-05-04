@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Tala Path</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0d;
+    --paper: #f5f4f0;
+    --dust: #e8e4dc;
+    --muted: #8a8680;
+    --rule: #d4cfc6;
+    --accent: #1c1c1e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    z-index: 10;
+  }
+
+  .topbar-left {
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .topbar-right {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .06em;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--accent);
+    color: #f5f4f0;
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: 'TALA';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    font-family: 'Fraunces', serif;
+    font-size: 180px;
+    font-weight: 700;
+    opacity: .04;
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -.02em;
+  }
+
+  .hero-tag {
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(245,244,240,.4);
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    font-size: 10px;
+    color: rgba(245,244,240,.35);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .meta-item span {
+    display: block;
+    font-size: 12px;
+    color: rgba(245,244,240,.65);
+    letter-spacing: .04em;
+  }
+
+  /* CONTENT */
+  .content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 40px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 56px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-num {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--ink);
+  }
+
+  .section-body {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #3a3836;
+    letter-spacing: .01em;
+  }
+
+  .section-body p {
+    margin-bottom: 14px;
+  }
+
+  .section-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* DATA TABLE */
+  .data-table {
+    margin: 20px 0;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .data-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .data-row:last-child { border-bottom: none; }
+
+  .data-key {
+    padding: 12px 16px;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--dust);
+    border-right: 1px solid var(--rule);
+  }
+
+  .data-val {
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    background: var(--accent);
+    color: #f5f4f0;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 20px 0;
+  }
+
+  .highlight-tag {
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(245,244,240,.4);
+    margin-bottom: 8px;
+  }
+
+  .highlight-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(245,244,240,.8);
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--dust);
+    border-radius: 12px;
+    padding: 32px;
+    margin-top: 48px;
+  }
+
+  .contact-tag {
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .contact-title {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .contact-text {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .contact-email {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: .02em;
+  }
+
+  /* FOOTER */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-left {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .06em;
+  }
+
+  .footer-right {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .06em;
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0;
+  }
+
+  .div-line { flex: 1; height: 1px; background: var(--rule); }
+  .div-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); opacity: .4; }
+
+  @media (max-width: 600px) {
+    .topbar, .hero, .content, .footer { padding-left: 20px; padding-right: 20px; }
+    .hero { padding-top: 48px; padding-bottom: 40px; }
+    .content { padding-top: 40px; }
+    .hero-meta { gap: 20px; }
+    .data-row { grid-template-columns: 1fr; }
+    .data-key { border-right: none; border-bottom: 1px solid var(--rule); }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">Tala Path // Privacy Policy</div>
+  <div class="topbar-right">DOC_REF: PRIV-2025-01</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Legal Document // User Protection</div>
+  <h1 class="hero-title">Privacy<br><em>Policy.</em></h1>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span>Tala Path</span>
+      application
+    </div>
+    <div class="meta-item">
+      <span>May 2025</span>
+      effective date
+    </div>
+    <div class="meta-item">
+      <span>EN / TR</span>
+      language
+    </div>
+    <div class="meta-item">
+      <span>v1.0</span>
+      version
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">00 //</span>
+      <span class="section-title">Overview</span>
+    </div>
+    <div class="section-body">
+      <p>Tala Path ("we", "our", or "the app") is a spiritual companion application for iOS. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+      <p>We believe in minimal data collection. Most of Tala Path's features work entirely on your device with no data sent to external servers.</p>
+    </div>
+
+    <div class="highlight">
+      <div class="highlight-tag">Core Principle //</div>
+      <div class="highlight-text">Your spiritual practice is personal. We do not sell your data, share it with third parties for marketing, or use it to profile you. The dhikr you count, the streaks you build, the paths you walk — these stay on your device.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01 //</span>
+      <span class="section-title">Information We Collect</span>
+    </div>
+    <div class="section-body">
+      <p>Tala Path collects minimal information to provide its services:</p>
+    </div>
+
+    <div class="data-table">
+      <div class="data-row">
+        <div class="data-key">Usage Data</div>
+        <div class="data-val">Zikir counts, streak data, daily goals — stored locally on your device only via UserDefaults. Never transmitted to our servers.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-key">Notifications</div>
+        <div class="data-val">If you enable morning/evening reminders, notification permissions are used. No notification content is shared externally.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-key">Advertising Data</div>
+        <div class="data-val">We use Google AdMob to display ads. AdMob may collect device identifiers and usage data to serve relevant ads. See Google's Privacy Policy for details.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-key">Analytics</div>
+        <div class="data-val">Basic crash reports and app performance data may be collected via Apple's standard frameworks to improve stability.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02 //</span>
+      <span class="section-title">How We Use Information</span>
+    </div>
+    <div class="section-body">
+      <p>The limited data we access is used exclusively to:</p>
+      <p>— Provide and improve the app's features (streak tracking, daily goals, zikir counter)<br>
+      — Send push notifications you have opted into<br>
+      — Display advertisements through Google AdMob<br>
+      — Diagnose and fix technical issues</p>
+      <p>We do not use your data for profiling, targeted marketing beyond AdMob's standard operation, or any purpose not listed here.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03 //</span>
+      <span class="section-title">Third-Party Services</span>
+    </div>
+    <div class="section-body">
+      <p>Tala Path integrates the following third-party services:</p>
+    </div>
+
+    <div class="data-table">
+      <div class="data-row">
+        <div class="data-key">Google AdMob</div>
+        <div class="data-val">Displays banner advertisements. Subject to Google's Privacy Policy at policies.google.com/privacy</div>
+      </div>
+      <div class="data-row">
+        <div class="data-key">Apple Push Notifications</div>
+        <div class="data-val">Used to deliver morning and evening reminders you opt into. Apple's privacy policy applies.</div>
+      </div>
+    </div>
+
+    <div class="section-body" style="margin-top: 16px;">
+      <p>We do not integrate social media SDKs, tracking pixels, or any other third-party analytics beyond what is listed above.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04 //</span>
+      <span class="section-title">Data Storage & Security</span>
+    </div>
+    <div class="section-body">
+      <p>All user-generated data (zikir history, streak counts, personal goals, BEYOND progress) is stored locally on your device using Apple's standard storage system (UserDefaults). This data is not transmitted to any external server.</p>
+      <p>If you delete the app, all locally stored data is permanently removed from your device.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05 //</span>
+      <span class="section-title">Children's Privacy</span>
+    </div>
+    <div class="section-body">
+      <p>Tala Path is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will take steps to remove such information.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">06 //</span>
+      <span class="section-title">Your Rights</span>
+    </div>
+    <div class="section-body">
+      <p>Since most data is stored locally on your device, you have full control over it at all times. You can:</p>
+      <p>— Delete all app data by uninstalling Tala Path<br>
+      — Disable push notifications in iOS Settings → Tala Path<br>
+      — Opt out of personalized ads through iOS Settings → Privacy → Tracking<br>
+      — Contact us with any data-related request</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">07 //</span>
+      <span class="section-title">Changes to This Policy</span>
+    </div>
+    <div class="section-body">
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. Continued use of Tala Path after changes constitutes acceptance of the updated policy.</p>
+    </div>
+  </div>
+
+  <div class="divider">
+    <div class="div-line"></div>
+    <div class="div-dot"></div>
+    <div class="div-line"></div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-section">
+    <div class="contact-tag">Get in Touch //</div>
+    <div class="contact-title">Questions?</div>
+    <div class="contact-text">If you have any questions about this Privacy Policy or how Tala Path handles your data, please reach out directly.</div>
+    <div class="contact-email">barkintunga@gmail.com</div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">© 2025 Tala Path — All rights reserved</div>
+  <div class="footer-right">talapath.com/privacy</div>
+</div>
+
+</body>
+</html>
